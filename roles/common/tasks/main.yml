@@ -18,3 +18,4 @@
 - name: Install PostgreSQL Server
   yum: name=postgresql{{ postgresql_version|replace('.', '') }}-server state=present
     #conf_file=/etc/yum.repos.d/pgdg-{{ postgresql_version|replace('.', '') }}-{{ ansible_distribution|lower() }}.repo
+  when: ansible_pkg_mgr == 'yum'
