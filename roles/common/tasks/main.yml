@@ -3,7 +3,7 @@
 
 - name: Install libselinux if needed
   yum: name=libselinux-python state=present
-  when: ansible_selinux.status == 'enabled'
+  when: ansible_selinux == True
 
 - name: Add PostgreSQL repo
   template: src={{ ansible_distribution }}.repo
